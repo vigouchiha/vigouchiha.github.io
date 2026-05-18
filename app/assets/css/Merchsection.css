@@ -1,0 +1,50 @@
+.simple-cta-section {
+  width: 100%;
+  padding: 3rem 2rem;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* The light grey box container */
+.cta-container {
+  width: 100%;
+  max-width: 1200px;
+  height: 400px; /* Adjust this height as needed based on your design */
+  background-color: #d9d9d9; /* The light grey color from the image */
+
+  /* Flexbox is used to center the button horizontally and vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The button styling */
+.cta-button {
+  background-color: #9c9c9c; /* The darker grey button color */
+  color: #111111;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 8px; /* Gives the slightly rounded corners */
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Add a subtle hover effect */
+.cta-button:hover {
+  background-color: #b0b0b0;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 768px) {
+  .cta-container {
+    height: 300px; /* Reduce the height of the grey box on mobile */
+  }
+}

@@ -1,0 +1,257 @@
+/* CSS Variables for Theming */
+.app-wrapper {
+  --bg-color: #fafafa;
+  --text-main: #000000;
+  --text-muted: #4a4a4a;
+  --nav-bg: #2b0f5c;
+  --nav-text: #ffffff;
+  --toggle-bg: #d1d5db;
+  --toggle-active: #a855f7;
+
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Dark Theme Overrides */
+.app-wrapper.dark-theme {
+  --bg-color: #121212;
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  --nav-bg: #1a0838;
+}
+
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+.navbar {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-box {
+  width: 40px;
+  height: 40px;
+  background-color: #d9d9d9;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-item {
+  color: var(--nav-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: opacity 0.2s;
+}
+
+.nav-item:hover {
+  opacity: 0.8;
+}
+
+/* Toggle Switch Styles */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--toggle-bg);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--toggle-active);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Hero Section Styles */
+.hero-section {
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-container {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+/* Left Text Column */
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 3rem;
+  max-width: 400px;
+}
+
+/* Social Grid */
+.social-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-main);
+  gap: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.social-item:hover {
+  transform: translateY(-5px);
+}
+
+.social-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.app-wrapper.dark-theme .social-icon-wrapper {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.social-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Right Image Column */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    display: none; /* Hide links on mobile for simplicity, or implement a hamburger menu */
+  }
+
+  .hero-image {
+    justify-content: center;
+    width: 100%;
+  }
+}

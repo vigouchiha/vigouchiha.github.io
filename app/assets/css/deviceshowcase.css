@@ -1,0 +1,91 @@
+.device-showcase-wrapper {
+  width: 100%;
+  padding: 3rem 2rem;
+  background-color: #fafafa; /* Matches the outer page background */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* The actual image container */
+.showcase-container {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 500px;
+
+  /* Replace 'gaming_setup.jpg' with your actual file name in the public folder */
+  background-image: url("/gaming_setup.jpg");
+  background-color: #1a1a2e; /* Fallback color */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Layout for positioning the text */
+  display: flex;
+  justify-content: flex-end; /* Pushes content to the right side */
+  align-items: center; /* Centers content vertically */
+}
+
+/* Container for text and button */
+.showcase-content {
+  padding-right: 8%; /* Gives breathing room from the right edge */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the button under the text */
+  text-align: center;
+}
+
+/* Typography for the heading */
+.showcase-heading {
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Helps readability over complex backgrounds */
+}
+
+/* Button Styling */
+.showcase-btn {
+  background-color: #a3a3a3; /* Muted grey color from the design */
+  color: #111111;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 8px; /* Matches the softly rounded corners */
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.showcase-btn:hover {
+  background-color: #b5b5b5;
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .showcase-container {
+    justify-content: center; /* Center content on mobile */
+    min-height: 400px;
+  }
+
+  .showcase-content {
+    padding-right: 0;
+    padding: 2rem;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.4
+    ); /* Adds a dark overlay on mobile for readability */
+    border-radius: 12px;
+  }
+
+  .showcase-heading {
+    font-size: 1.3rem;
+  }
+}
