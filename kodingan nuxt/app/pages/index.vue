@@ -1,122 +1,89 @@
 <template>
-  <div :class="['app-wrapper', { 'dark-theme': isDarkMode }]">
-    <!-- Header Navigation -->
-    <header class="navbar">
-      <div class="nav-container">
-        <!-- Grey Box Placeholder -->
-        <div class="logo-box"></div>
-
-        <!-- Navigation Links -->
-        <nav class="nav-links">
-          <a href="#" class="nav-item">Beranda</a>
-          <a href="#" class="nav-item">Activities</a>
-          <a href="#" class="nav-item">Contact</a>
-        </nav>
-
-        <!-- Theme Toggle -->
-        <div class="theme-toggle">
-          <span class="theme-label">Light</span>
-          <label class="switch">
-            <input
-              type="checkbox"
-              :checked="isDarkMode"
-              @change="toggleTheme"
-            />
-            <span class="slider"></span>
-          </label>
-          <span class="theme-label">Dark</span>
+  <div class="page-wrapper">
+    <main class="container">
+      <section class="profile-section">
+        <div class="profile-image">
+          <img
+            src="/borutotimeskip.jpg"
+            alt="Vigo Uchiha"
+            class="profile-pic"
+          />
         </div>
+        <div class="profile-detail">
+          <h1 class="name">Vigo Uchiha</h1>
+          <h2 class="title">Content Creator</h2>
+          <p class="tagline">We have to be greater than what we suffer</p>
+        </div>
+      </section>
+
+      <div class="social-links">
+        <div class="social-icon">
+          <a href="https://www.youtube.com/@vigouchiha" target="_blank"
+            ><img class="youtube" src="/youtube.png" alt="YouTube"
+          /></a>
+        </div>
+
+        <div class="social-icon">
+          <a href="https://www.tiktok.com/@vigouchiha" target="_blank"
+            ><img src="/tiktok.png" alt="TikTok"
+          /></a>
+        </div>
+        <div class="social-icon">
+          <a href="https://www.instagram.com/vigouchiha" target="_blank"
+            ><img src="/instagram.png" alt="Instagram"
+          /></a>
+        </div>
+        <!-- <div class="social-icon">
+          <a href="#"><img src="/linkedin.png" alt="LinkedIn" /></a>
+        </div> -->
       </div>
-    </header>
 
-    <!-- Main Hero Section -->
-    <main class="hero-section">
-      <div class="hero-container">
-        <!-- Left Content: Typography and Socials -->
-        <div class="hero-text">
-          <h1 class="title">VIGO UCHIHA</h1>
-          <h2 class="subtitle">Content Creator</h2>
-          <p class="quote">“We have to be greater than what we suffer”</p>
+      <!-- <nav class="tabs">
+        <button
+          v-for="tab in tabs"
+          :key="tab"
+          @click="activeTab = tab"
+          :class="['tab', { active: activeTab === tab }]"
+        >
+          {{ tab }}
+        </button>
+      </nav> -->
 
-          <div class="social-grid">
-            <a
-              href="#"
-              v-for="social in socialLinks"
-              :key="social.name"
-              class="social-item"
-            >
-              <div class="social-icon-wrapper">
-                <img
-                  :src="social.icon"
-                  :alt="social.name"
-                  class="social-icon"
-                />
-              </div>
-              <span class="social-name">{{ social.name }}</span>
-            </a>
+      <!-- <section class="banner-section">
+        <div class="banner">
+          <div class="banner-container">
+            <img
+              src="/gaming_setup.jpg"
+              alt="Product Shirt"
+              class="product-img"
+            />
           </div>
         </div>
+        <div class="banner2"></div>
+        <div class="banner3"></div>
+      </section> -->
+      <section class="donation">
+        <a href=https://saweria.co/vigouchiha class="saweria"target="_blank" >
+          saweria
+        </a>
 
-        <!-- Right Content: Character Image -->
-        <div class="hero-image">
-          <img src="" alt="Character Illustration" />
-        </div>
-      </div>
+        <a href="https://sociabuzz.com/vigouchiha/tribe" class="socialbuzz"target="_blank">
+          sociabuzz
+        </a>
+      </section>
     </main>
   </div>
-  <ProductDetail />
-  <DeviceShowcase />
-  <MerchSection />
-  <ProductCatalog />
-  <UnitSystem />
 </template>
-<style scoped>
-@import url("~/assets/css/index.css");
-</style>
+
 <script setup>
-import { ref, onMounted, watch } from "vue";
-import ProductDetail from "~/components/ProductDetail.vue";
+import { ref } from "vue";
 
-const isDarkMode = ref(false);
-
-// Toggle function for the switch
-const toggleTheme = () => {
-  isDarkMode.value = !isDarkMode.value;
-};
-
-// Persist theme preference in localStorage
-onMounted(() => {
-  if (process.client) {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      isDarkMode.value = true;
-    }
-  }
-});
-
-watch(isDarkMode, (newValue) => {
-  if (process.client) {
-    localStorage.setItem("theme", newValue ? "dark" : "light");
-  }
-});
-
-// Social links data
-const socialLinks = [
-  {
-    name: "Linkedin",
-    icon: "https://cdn-icons-png.flaticon.com/512/174/174857.png",
-  },
-  {
-    name: "Instagram",
-    icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
-  },
-  {
-    name: "Tiktok",
-    icon: "https://cdn-icons-png.flaticon.com/512/3046/3046120.png",
-  },
-  {
-    name: "Youtube",
-    icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
-  },
-];
+// State untuk mengatur tab yang aktif
+const tabs = ref(["Beranda", "Shop", "Gaming Gear"]);
+const activeTab = ref("Beranda");
 </script>
+
+<style scoped>
+/* --- BASE & TYPOGRAPHY --- */
+@import url("~/assets/css/mobile.css");
+</style>
