@@ -35,7 +35,7 @@
         </div>
         <div class="social-icon">
           <a href="https://discord.gg/SnxYymWX" target="_blank"
-            ><img src="/discord.png" alt="Twitter"
+            ><img src="/discord.png" alt="Discord"
           /></a>
         </div>
         <!-- <div class="social-icon">
