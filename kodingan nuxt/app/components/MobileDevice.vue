@@ -33,6 +33,11 @@
             ><img src="/instagram.png" alt="Instagram"
           /></a>
         </div>
+        <div class="social-icon">
+          <a href="https://discord.gg/SnxYymWX" target="_blank"
+            ><img src="/discord.png" alt="Twitter"
+          /></a>
+        </div>
         <!-- <div class="social-icon">
           <a href="#"><img src="/linkedin.png" alt="LinkedIn" /></a>
         </div> -->
