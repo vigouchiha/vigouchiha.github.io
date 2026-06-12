@@ -1,0 +1,28 @@
+:root {
+  --merah: #db1919;
+  --biru: #1e1e40;
+  --hitam: #000000;
+  --putih: #ffffff;
+  --kuning: #f1c40f;
+  --abu: #7f8c8d;
+  --hijau: #27ae60;
+  --ungu: #8e44ad;
+  --jingga: #e67e22;
+  --text: #ffffff;
+  --background: #ffffff;
+  --primary: #280857;
+  --secondary: #2ecc71;
+  --accent: #e74c3c;
+  --font-family: "Arial", sans-serif;
+  --font-size: 16px;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Prevents padding from breaking layout widths */
+}
+.custom-button {
+  all: unset;
+}
