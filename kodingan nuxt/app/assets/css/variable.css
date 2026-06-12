@@ -16,13 +16,7 @@
   --font-family: "Arial", sans-serif;
   --font-size: 16px;
 }
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Prevents padding from breaking layout widths */
-}
+
 .custom-button {
   all: unset;
 }
